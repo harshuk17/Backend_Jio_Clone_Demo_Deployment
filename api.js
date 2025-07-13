@@ -21,6 +21,7 @@ const userName= process.env.DB_USERNAME;
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // *******MAKING CONNECTION WITH DB***********
+mongoose.set('strictQuery', false);
 const dbLink = `mongodb+srv://${userName}:${password}@algo-backend.c4rl4bd.mongodb.net/jio_clone?retryWrites=true&w=majority&appName=algo-backend`;
 mongoose.connect(dbLink, {
     dbName: "jio_clone", // force MongoDB to use this DB
