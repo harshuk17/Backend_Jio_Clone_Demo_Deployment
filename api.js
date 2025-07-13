@@ -8,6 +8,7 @@ const util = require("util");
 const router= express.Router();
 const app=express();
 dotenv.config(); //taking out variables of env file
+const PORT = process.env.PORT || 3003
 
 
 // *******MIDDLEWARE INITIATES IN EVERY REQUEST*************
@@ -44,6 +45,6 @@ const movieRouter = require("./router/movieRouter");
 app.use("/api", movieRouter); 
 
 // *********SERVER SETUP**********
-app.listen(3003,()=>{
-    console.log("server started at port 3003");
+app.listen(PORT,()=>{
+    console.log(`server started at port ${PORT}`);
 })
